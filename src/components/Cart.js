@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
-export class Cart extends Component {
-    render() {
+const Cart = (props) => {
+    console.log(props)
+    const {name, tax, subtotal, total, ProductSelected} = props 
         return (
-            <div>
-                
+            <div className='card'>
+                <h3> Card</h3>
             </div>
         )
     }
-}
+
 
 export default Cart

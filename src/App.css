@@ -13,3 +13,9 @@
     grid-column: 2 / span 1;
     grid-row: 2;
   }
+
+  #checkout form {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 77px;
+  }
