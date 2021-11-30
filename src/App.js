@@ -1,20 +1,28 @@
 import { Component } from "react";
 import "./App.css";
 import Products from "./components/Products";
-import productData from "./data/productData"
+import productData from "./data/productData";
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-      productData:productData
-    }
+      productData: productData,
+    };
   }
-  render(){
-    const {productData} = this.state
-    console.log(productData)
-    return (<Products productData={productData}/>)
+  render() {
+    const { productData } = this.state;
+    return (
+      <>
+        <h1> My garage Sale</h1>
+        <div className="app">
+          <div>
+            <Products productData={productData} />
+          </div>
+        </div>
+      </>
+    );
   }
-};
+}
 
 export default App;
