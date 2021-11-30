@@ -1,9 +1,11 @@
 const Cart = (props) => {
-  console.log(props);
-  const { name, tax, subtotal, total, ProductSelected } = props;
+    const { tax, subtotal, total, ProductSelected } = props;
+    const { productData } = props
+    const displayName =productData.map(name =>name.name)
+    console.log(displayName);
   return (
-    <div className="card">
-      {name && ProductSelected}
+    <div className="cart">
+      {displayName && ProductSelected}
       <h3> Card</h3>
       <div>Subtotal: ${subtotal}</div>
       <div>Tax: ${tax}</div>

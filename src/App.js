@@ -12,7 +12,8 @@ class App extends Component {
       subtotal:'',
       tax:'',
       total:'',
-      ProductSelected:[]
+      ProductSelected:[],
+      productData:productData
     };
   }
 
@@ -49,16 +50,6 @@ class App extends Component {
     console.log(product);
   }; 
   
-    // addToCard = (product) => {
-    //     let subtotal = 0
-    //     subtotal += product.price;
-    // this.setState({
-    //   subtotal: subtotal,
-    //   tax: this.state.subtotal * 0.05,
-    //   total: this.state.subtotal - this.state.tax,
-    // });
-  // };
-
   render() {
     
     return (
@@ -71,15 +62,13 @@ class App extends Component {
             />
           </div>
           <div>
-            <Cart productData={productData}
+            <Cart productData={this.state.productData}
             subtotal={this.state.subtotal}
             tax={this.state.tax}
             total={this.state.total}
             name={this.state.name}
             ProductSelected={this.state.ProductSelected}/>
-          </div>
-          <div>
-          <Checkout />
+          <Checkout total={this.state.total} />
           </div>
         </div>
       </>

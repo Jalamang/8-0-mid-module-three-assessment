@@ -12,17 +12,18 @@
     gap: 55px;
     grid-column: 2 / span 1;
     grid-row: 2;
+    
   }
 
   #checkout  {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 77px;
-    border: 2px solid rgb(207, 15, 15);
+   
   }
 
-  .card {
+  .cart {
     display: grid;
     grid-template-columns: 1fr;
-   border: 2px solid black;
+  
   }
