@@ -1,14 +1,22 @@
-import React from 'react'
+import React from "react";
 
-export const ProductCard = ({product}) => {
-    
-    return (
-        <div>
-           <h3>{product.name}</h3> 
-           <div>{product.price}</div> 
-           <img src={product.img} alt={product.name}/>
-           <p>{product.description}</p>
+export const ProductCard = (props) => {
+    const { name, price, img, description} = props.product
+  return (
+    <div onClick={() => props.handleProductSelected(props.product)}>
+      <div>{name}</div>
+      <div>
+        Price: ${(price).toFixed(2)}
+        {/* Price:${Math.round((price + Number.EPSILON) * 100) / 100} */}
         </div>
-    )
-}
-export default ProductCard
+      <button 
+    //   onClick={props.addToCard} 
+      type="submit">
+        Add To Cart
+      </button>
+      <img src={img} alt={name} />
+      <p>{description}</p>
+    </div>
+  );
+};
+export default ProductCard;
