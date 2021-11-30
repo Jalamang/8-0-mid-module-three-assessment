@@ -21,15 +21,16 @@ class Checkout extends Component {
 
   handleSubmit = (evt) => {
     evt.preventDefault();
-    alert("Purchase complete you'll be charged $" + this.props.total);
+    // alert("Purchase complete you'll be charged $" + this.props.total);
     const formFields = ["firstName", "lastName", "email", "credit", "zipCode"];
     let isValid = true;
     formFields.forEach((field) => {
-      isValid = this.validateField(field) && isValid;
+        isValid = this.validateField(field) && isValid;
     });
-
+    
     if (isValid) {
-      this.setState({
+       
+        this.setState({
         isFormSubmitted: true,
         firstName: "",
         lastName: "",
@@ -42,7 +43,7 @@ class Checkout extends Component {
       return this.state.isFormSubmitted;
     }
   };
-  
+
   validateField(name) {
     let isValid = false;
     if (name === "firstName") {
@@ -51,12 +52,12 @@ class Checkout extends Component {
       isValid = this.validateLastName();
     } else if (name === "email") {
       isValid = this.validateEmailAddress();
+    }  else if (name === "zipCode") {
+      isValid = this.validateZipCode(); 
     } else if (name === "credit") {
-      isValid = this.validateCreditCardNumber();
-    } else if (name === "zipCode") {
-      isValid = this.validateZipCode();
-      return isValid;
-    }
+        isValid = this.validateCreditCardNumber();
+      }
+    return isValid;
   }
 
   emailValidator =
@@ -111,11 +112,11 @@ class Checkout extends Component {
   }
 
   validateZipCode() {
-    const value = this.state.credit;
-    if (value.trim === "" || !this.zipCodeValidator.test(value)) {
+    const value = this.state.zipCode;
+    if (value.trim === "" ) {
       alert("Zip code is not valid");
-      // } else if (!this.zipCodeValidator.test(value)) {
-      //   alert("Zip code is not valid");
+      } else if (!this.zipCodeValidator.test(value)) {
+        alert("Zip code is not valid: must be at least 5 digits long");
     }
     this.setState({
       credit: "",

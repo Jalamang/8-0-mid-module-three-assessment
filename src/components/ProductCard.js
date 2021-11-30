@@ -4,7 +4,7 @@ export const ProductCard = (props) => {
     const { name, price, img, description} = props.product
   return (
     <div onClick={() => props.handleProductSelected(props.product)}>
-      <div>{name}</div>
+      <h4>{name}</h4>
       <div>
         Price: ${(price).toFixed(2)}
         {/* Price:${Math.round((price + Number.EPSILON) * 100) / 100} */}

@@ -29,17 +29,18 @@ class App extends Component {
           100
       ) / 100;
     total = total.toFixed(2);
+
     let tax =
       (((Number(this.state.subtotal) + Number(product.price)) * 0.05 +
         Number.EPSILON) *
         100) /
       100;
     tax = tax.toFixed(2);
+
     this.setState({
       subtotal: subtotal,
       tax: tax,
       total: total,
-      name: product.name,
       ProductSelected: [...this.state.ProductSelected,
         <ul className="card-li">
           <li>
@@ -51,13 +52,15 @@ class App extends Component {
   }; 
   
   render() {
-    
+    console.log(this.state.ProductSelected)
     return (
+      
       <>
         <h1> My garage Sale</h1>
         <div className="app">
           <div>
-            <Products productData={productData} 
+            <Products 
+            productData={productData} 
              handleProductSelected={this.handleProductSelected}
             />
           </div>
@@ -66,7 +69,8 @@ class App extends Component {
             subtotal={this.state.subtotal}
             tax={this.state.tax}
             total={this.state.total}
-            ProductSelected={this.state.ProductSelected}/>
+            ProductSelected={this.state.ProductSelected}
+            />
           <Checkout total={this.state.total} />
           </div>
         </div>
