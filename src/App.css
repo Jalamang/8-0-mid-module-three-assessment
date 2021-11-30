@@ -15,7 +15,7 @@
     
   }
 
-  #checkout  {
+  #checkout form {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 77px;
@@ -27,3 +27,12 @@
     grid-template-columns: 1fr;
   
   }
+
+  #checkout input[type='text'],
+#checkout input[type='email'] {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}

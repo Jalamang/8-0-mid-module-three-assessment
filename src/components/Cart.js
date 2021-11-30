@@ -5,8 +5,9 @@ const Cart = (props) => {
     console.log(displayName);
   return (
     <div className="cart">
+        <h3> Card</h3>
       {displayName && ProductSelected}
-      <h3> Card</h3>
+      
       <div>Subtotal: ${subtotal}</div>
       <div>Tax: ${tax}</div>
       <div>Total: ${total}</div>

@@ -66,7 +66,6 @@ class App extends Component {
             subtotal={this.state.subtotal}
             tax={this.state.tax}
             total={this.state.total}
-            name={this.state.name}
             ProductSelected={this.state.ProductSelected}/>
           <Checkout total={this.state.total} />
           </div>
