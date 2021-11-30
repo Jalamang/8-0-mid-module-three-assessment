@@ -3,6 +3,7 @@ import "./App.css";
 import Products from "./components/Products";
 import productData from "./data/productData";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,9 @@ class App extends Component {
           </div>
           <div>
             <Cart productData={productData}/>
+          </div>
+          <div>
+          <Checkout />
           </div>
         </div>
       </>
